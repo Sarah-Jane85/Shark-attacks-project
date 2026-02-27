@@ -1,0 +1,47 @@
+{
+  "pipeline": "shark_cleaning",
+  "steps": [
+    {
+      "step": "clean_case_numbers",
+      "mismatch_rows_raw": 326,
+      "primary_matches_YYYY_MM_DD": 6658,
+      "secondary_matches_YYYY_MM_DD": 6661,
+      "dropped_columns": [
+        "Case Number",
+        "Case Number.1",
+        "original order"
+      ],
+      "status": "ok"
+    },
+    {
+      "step": "clean_dates",
+      "rows_before": 7074,
+      "rows_after": 6192,
+      "rows_dropped_no_parsed_date": 882,
+      "date_quality_counts": {
+        "Complete": 5359,
+        "Unknown": 537,
+        "Month_year": 296
+      },
+      "status": "ok"
+    },
+    {
+      "step": "clean_time",
+      "time_category_counts": {
+        "Unknown": 2904,
+        "Afternoon": 1493,
+        "Morning": 907,
+        "Evening": 463,
+        "Early morning": 162,
+        "Night": 153,
+        "null": 110
+      },
+      "status": "ok"
+    },
+    {
+      "step": "clean_categories",
+      "fatal": {
+        "step": "clean_fatal",
+        "value_counts_top": {
+          "N": 4421,
+          "Y": 1214
